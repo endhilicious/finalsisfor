@@ -2,6 +2,12 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin extends CI_Controller {
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('mod');
+	}
+
 	public function index() {
 		$this->load->view('admin/index');
 	}
@@ -30,12 +36,51 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/libraryForm');	
 	}
 	public function product() {
-		$this->load->view('admin/product');
+		$this->load->model('mod');
+		$tampil['content'] = 'admin/product';
+		$tampil['judul'] = 'product';
+		$tampil['data']= $this->db->get('product')->result();
+		$this->load->view('admin/product', $tampil);
 	}
 	public function productTambah(){
-		$this->load->view('admin/productForm');	
+		$data = [];
+		$data['product'] = false;
+		$data['action_button'] ='Tambah';
+		$id = $this->uri->segment(3);
+		if ($id){
+			$data['product']=$this->mod->get_product($id);
+			$data['action_button']= 'Update';
+		}
+		$this->load->view('admin/productForm', $data);	
 	}
+
+	public function productSimpan(){
+		$isi['Jenis_Paket']= $this->input->post('Jenis_Paket');
+		$isi['Nama_Paket']= $this->input->post('Nama_Paket');
+		$isi['Fasilitas']= $this->input->post('Fasilitas');
+		$isi['Jenis_Kerjasama']= $this->input->post('Jenis_Kerjasama');
+		$isi['Harga_Per_Bulan']= $this->input->post('Harga_Per_Bulan');
+		$isi['Harga_Per_Tahun']= $this->input->post('Harga_Per_Tahun');
+
+		$id = $this->mod->is_product_exist($isi['Jenis_Paket']);
+		if($id&&$id>0){
+			$this->mod->UpdateData($isi['Jenis_Paket'], $isi);
+		}else{
+			$this->mod->insertData($isi);
+		}
+		redirect(base_url('index.php/admin/product'));
+	}
+	public function productHapus(){
+		$id = $this->uri->segment(3);
+		if($id){
+			$this->mod->deleteData($id);
+		} 
+		redirect(base_url('index.php/admin/product'));
+	}
+
 	public function post(){
 		$this->load->view('admin/posts');	
 	}
+
+
 }

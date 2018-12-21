@@ -162,16 +162,16 @@
     <section class="content">
         <div class="container-fluid">
             <div class="block-header">
-                <h2>NORMAL TABLES</h2>
+                <h2>FORM EXAMPLES</h2>
             </div>
-            <!-- Basic Table -->
+
+            <!-- Vertical Layout -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
                             <h2>
-                                BASIC TABLES
-                                <small>Basic example without any additional modification classes</small>
+                                TAMBAH PRODUk
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
@@ -179,82 +179,91 @@
                                         <i class="material-icons">more_vert</i>
                                     </a>
                                     <ul class="dropdown-menu pull-right">
-                                        <li><a href="<?php echo site_url() ?>/admin/customerTambah">Tambah Data</a></li>
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
                                     </ul>
                                 </li>
                             </ul>
                         </div>
-                        <div class="body table-responsive">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>FIRST NAME</th>
-                                        <th>LAST NAME</th>
-                                        <th>USERNAME</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
-                                        <td>@twitter</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">4</th>
-                                        <td>Larry</td>
-                                        <td>Jellybean</td>
-                                        <td>@lajelly</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">5</th>
-                                        <td>Larry</td>
-                                        <td>Kikat</td>
-                                        <td>@lakitkat</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="body">
+                            <form action="<?php echo base_url('index.php/admin/productSimpan') ?>" method="post">
+                                <label for="Jenis_Paket">Jenis Paket</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" id="Jenis_Paket" class="form-control" name="Jenis_Paket" value="<?php echo $product ? $product->Jenis_Paket : '' ?>">
+                                    </div>
+                                </div>
+                                <label for="Nama_Paket">Nama Paket</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" id="Nama_Paket" class="form-control" name="Nama_Paket" value="<?php echo $product ? $product->Nama_Paket : '' ?>">
+                                    </div>
+                                </div>
+                                <label for="Fasilitas">Fasilitas</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" id="Fasilitas" class="form-control" name="Fasilitas" value="<?php echo $product ? $product->Fasilitas : '' ?>">
+                                    </div>
+                                </div>
+                                <label for="Jenis_Kerjasama">Jenis Kerjasama</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" id="Jenis_Kerjasama" class="form-control" name="Jenis_Kerjasama" value="<?php echo $product ? $product->Jenis_Kerjasama : '' ?>">
+                                    </div>
+                                </div>
+                                <label for="Harga_Per_Bulan">Harga per Bulan</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" id="Harga_Per_Bulan" class="form-control" name="Harga_Per_Bulan" value="<?php echo $product ? $product->Harga_Per_Bulan : '' ?>">
+                                    </div>
+                                </div>
+                                <label for="Harga_Per_Tahun">Harga per Tahun</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" id="Harga_Per_Tahun" class="form-control" name="Harga_Per_Tahun" value="<?php echo $product ? $product->Harga_Per_Tahun : '' ?>">
+                                    </div>
+                                </div>
+                                <br>
+                                <button type="submit" class="btn btn-primary m-t-15 waves-effect"><?php echo $action_button ?></button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- #END# Basic Table -->
+            <!-- #END# Vertical Layout -->
         </div>
     </section>
 
     <!-- Jquery Core Js -->
-    <script src="/jquery/jquery.min.js"></script>
+    <script src="<?php echo base_url() ?>/assets/plugins/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core Js -->
-    <script src="/bootstrap/js/bootstrap.js"></script>
+    <script src="<?php echo base_url() ?>/assets/plugins/bootstrap/js/bootstrap.js"></script>
 
     <!-- Select Plugin Js -->
-    <script src="/bootstrap-select/js/bootstrap-select.js"></script>
+    <script src="<?php echo base_url() ?>/assets/plugins/bootstrap-select/js/bootstrap-select.js"></script>
 
     <!-- Slimscroll Plugin Js -->
-    <script src="/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script src="<?php echo base_url() ?>/assets/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
 
     <!-- Waves Effect Plugin Js -->
-    <script src="/node-waves/waves.js"></script>
+    <script src="<?php echo base_url() ?>/assets/plugins/node-waves/waves.js"></script>
+
+    <!-- Autosize Plugin Js -->
+    <script src="<?php echo base_url() ?>/assets/plugins/autosize/autosize.js"></script>
+
+    <!-- Moment Plugin Js -->
+    <script src="<?php echo base_url() ?>/assets/plugins/momentjs/moment.js"></script>
+
+    <!-- Bootstrap Material Datetime Picker Plugin Js -->
+    <script src="<?php echo base_url() ?>/assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
 
     <!-- Custom Js -->
-    <script src="<?php echo base_url() ?>assets/js/admin.js"></script>
+    <script src="<?php echo base_url() ?>/assets/js/admin.js"></script>
+    <script src="<?php echo base_url() ?>/assets/js/pages/forms/basic-form-elements.js"></script>
 
     <!-- Demo Js -->
-    <script src="<?php echo base_url() ?>assets/js/demo.js"></script>
+    <script src="<?php echo base_url() ?>/assets/js/demo.js"></script>
 </body>
-
 </html>
