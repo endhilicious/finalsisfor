@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -10,27 +10,26 @@
     <link rel="icon" href="<?php echo base_url() ?>/assets/favicon.ico" type="image/x-icon">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet"
-          type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap Core Css -->
     <link href="<?php echo base_url() ?>/assets/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
 
     <!-- Waves Effect Css -->
-    <link href="<?php echo base_url() ?>/assets/plugins/node-waves/waves.css" rel="stylesheet"/>
+    <link href="<?php echo base_url() ?>/assets/plugins/node-waves/waves.css" rel="stylesheet" />
 
     <!-- Animation Css -->
-    <link href="<?php echo base_url() ?>/assets/plugins/animate-css/animate.css" rel="stylesheet"/>
+    <link href="<?php echo base_url() ?>/assets/plugins/animate-css/animate.css" rel="stylesheet" />
 
     <!-- Morris Chart Css-->
-    <link href="<?php echo base_url() ?>/assets/plugins/morrisjs/morris.css" rel="stylesheet"/>
+    <link href="<?php echo base_url() ?>/assets/plugins/morrisjs/morris.css" rel="stylesheet" />
 
     <!-- Custom Css -->
     <link href="<?php echo base_url() ?>assets/css/style.css" rel="stylesheet">
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
-    <link href="<?php echo base_url() ?>assets/css/themes/all-themes.css" rel="stylesheet"/>
+    <link href="<?php echo base_url() ?>assets/css/themes/all-themes.css" rel="stylesheet" />
 </head>
 
 <body class="theme-red">
@@ -69,16 +68,14 @@
 <nav class="navbar">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse"
-               data-target="#navbar-collapse" aria-expanded="false"></a>
+            <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
             <a href="javascript:void(0);" class="bars"></a>
             <a class="navbar-brand" href="index.html">FINAL SISTEM INFORMASI</a>
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
                 <!-- Call Search -->
-                <li><a href="javascript:void(0);" class="js-search" data-close="true"><i
-                                class="material-icons">search</i></a></li>
+                <li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>
                 <!-- #END# Call Search -->
             </ul>
         </div>
@@ -91,7 +88,7 @@
         <!-- User Info -->
         <div class="user-info">
             <div class="image">
-                <img src="<?php echo base_url() ?>assets/images/user.png" width="48" height="48" alt="User"/>
+                <img src="<?php echo base_url() ?>assets/images/user.png" width="48" height="48" alt="User" />
             </div>
             <div class="info-container">
                 <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
@@ -99,12 +96,6 @@
                 <div class="btn-group user-helper-dropdown">
                     <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                     <ul class="dropdown-menu pull-right">
-                        <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profile</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="javascript:void(0);"><i class="material-icons">group</i>Followers</a></li>
-                        <li><a href="javascript:void(0);"><i class="material-icons">shopping_cart</i>Sales</a></li>
-                        <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li>
-                        <li role="separator" class="divider"></li>
                         <li><a href="javascript:void(0);"><i class="material-icons">input</i>Sign Out</a></li>
                     </ul>
                 </div>
@@ -170,27 +161,21 @@
 
 <section class="content">
     <div class="container-fluid">
-        <!-- Image Gallery -->
         <div class="block-header">
-            <h2>
-                IMAGE GALLERY
-                <small>Taken from <a href="http://sachinchoolur.github.io/lightGallery/" target="_blank">sachinchoolur.github.io/lightGallery</a>
-                </small>
-            </h2>
+            <h2>FORM EXAMPLES</h2>
         </div>
-        <div class="row">
+
+        <!-- Vertical Layout -->
+        <div class="row clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="card">
                     <div class="header">
                         <h2>
-                            GALLERY
-                            <small>All pictures taken from <a href="https://unsplash.com/"
-                                                              target="_blank">unsplash.com</a></small>
+                            CUSTOMER
                         </h2>
                         <ul class="header-dropdown m-r--5">
                             <li class="dropdown">
-                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
-                                   role="button" aria-haspopup="true" aria-expanded="false">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     <i class="material-icons">more_vert</i>
                                 </a>
                                 <ul class="dropdown-menu pull-right">
@@ -202,32 +187,69 @@
                         </ul>
                     </div>
                     <div class="body">
-                        <div id="aniimated-thumbnials" class="list-unstyled row clearfix">
+                        <?php foreach($customer as $c){ ?>
+                            <form action="<?php echo site_url(). '/admin/update/'.$c->id; ?>" method="post" id="contactFrm" name="contactFrm">
+                            <label>Name</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" id="email_address" class="form-control" name="name" value="<?php echo $c->name ?>" placeholder="Enter your name">
+                                </div>
+                            </div>
 
-                        </div>
+                            <label>Email</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" id="email_address" class="form-control" name="email" value="<?php echo $c->email ?>" placeholder="Enter your email">
+                                </div>
+                            </div>
+
+                            <label>Phone Number</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" id="email_address" class="form-control" name="phone" value="<?php echo $c->phone ?>" placeholder="Enter your phone number">
+                                </div>
+                            </div>
+
+                            <label>Instagram</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" id="email_address" class="form-control" name="instagram" value="<?php echo $c->instagram ?>" placeholder="Enter your instagram id">
+                                </div>
+                            </div>
+
+                            <label>Date of Birth</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" id="email_address" class="form-control" name="born_date" value="<?php echo $c->born_date ?>" placeholder="Enter your date of birth">
+                                </div>
+                            </div>
+
+                            <label>Job</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" id="email_address" class="form-control" name="job" value="<?php echo $c->job ?>" placeholder="Enter your job">
+                                </div>
+                            </div>
+
+                            <label>University</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" id="email_address" class="form-control"name="university" value="<?php echo $c->university ?>" placeholder="Enter your university">
+                                </div>
+                            </div>
+
+
+                            <br>
+                            <input type="submit" value="SUBMIT" name="SUBMIT" class="btn btn-primary m-t-15 waves-effect">
+                        </form>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- #END# Vertical Layout -->
     </div>
 </section>
-
-<script>
-
-    const image = document.querySelector('.body');
-    fetch('https://jsonplaceholder.typicode.com/photos')
-        .then(response => response.json())
-        .then((json) => {
-            for (var i = 0; i < 10; i++) {
-                text = '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">\n' +
-                    '        <img class="img-responsive thumbnail" src="' + json[i]['url'] + '">\n' +
-                    '    </div>';
-                image.innerHTML += text;
-            }
-        });
-
-
-</script>
 
 <!-- Jquery Core Js -->
 <script src="<?php echo base_url() ?>/assets/plugins/jquery/jquery.min.js"></script>
@@ -244,11 +266,20 @@
 <!-- Waves Effect Plugin Js -->
 <script src="<?php echo base_url() ?>/assets/plugins/node-waves/waves.js"></script>
 
+<!-- Autosize Plugin Js -->
+<script src="<?php echo base_url() ?>/assets/plugins/autosize/autosize.js"></script>
+
+<!-- Moment Plugin Js -->
+<script src="<?php echo base_url() ?>/assets/plugins/momentjs/moment.js"></script>
+
+<!-- Bootstrap Material Datetime Picker Plugin Js -->
+<script src="<?php echo base_url() ?>/assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+
 <!-- Custom Js -->
 <script src="<?php echo base_url() ?>/assets/js/admin.js"></script>
+<script src="<?php echo base_url() ?>/assets/js/pages/forms/basic-form-elements.js"></script>
 
 <!-- Demo Js -->
-<script src="<?php echo base_url() ?>assets/js/demo.js"></script>
+<script src="<?php echo base_url() ?>/assets/js/demo.js"></script>
 </body>
-
 </html>
