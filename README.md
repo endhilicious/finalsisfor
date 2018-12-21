@@ -1,4 +1,18 @@
 # finalsisfor
+<table>
+  <tr>
+    <td>Nama</td>
+    <td>Diki Siswanto</td>
+  </tr>
+  <tr>
+    <td>NIM</td>
+    <td>D42116316</td>
+  </tr>
+  <tr>
+    <td>Modul</td>
+    <td>Customer</td>
+  </tr>
+</table>
 ## Admin Login
 <table>
   <tr>
