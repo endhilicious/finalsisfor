@@ -7,23 +7,23 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <title>Welcome To | Bootstrap Based Admin Template - Material Design</title>
     <!-- Favicon-->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="<?php echo base_url() ?>/assets/favicon.ico" type="image/x-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap Core Css -->
-    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>/assets/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
 
     <!-- Waves Effect Css -->
-    <link href="/node-waves/waves.css" rel="stylesheet" />
+    <link href="<?php echo base_url() ?>/assets/plugins/node-waves/waves.css" rel="stylesheet" />
 
     <!-- Animation Css -->
-    <link href="/animate-css/animate.css" rel="stylesheet" />
+    <link href="<?php echo base_url() ?>/assets/plugins/animate-css/animate.css" rel="stylesheet" />
 
     <!-- Morris Chart Css-->
-    <link href="/morrisjs/morris.css" rel="stylesheet" />
+    <link href="<?php echo base_url() ?>/assets/plugins/morrisjs/morris.css" rel="stylesheet" />
 
     <!-- Custom Css -->
     <link href="<?php echo base_url() ?>assets/css/style.css" rel="stylesheet">
@@ -171,7 +171,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                VERTICAL LAYOUT
+                                CUSTOMER
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
@@ -188,20 +188,58 @@
                         </div>
                         <div class="body">
                             <form>
-                                <label for="email_address">Email Address</label>
+                                <label for="email_address">Name</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" id="email_address" class="form-control" placeholder="Enter your email address">
+                                        <input type="text" id="email_address" class="form-control" placeholder="Enter your name">
                                     </div>
                                 </div>
-                                <label for="password">Username</label>
+
+                                <label for="email_address">Email</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" id="email_address" class="form-control" placeholder="Enter your email address">
+                                        <input type="text" id="email_address" class="form-control" placeholder="Enter your email">
                                     </div>
                                 </div>
+
+                                <label for="email_address">Phone Number</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" id="email_address" class="form-control" placeholder="Enter your phone number">
+                                    </div>
+                                </div>
+
+                                <label for="email_address">Instagram</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" id="email_address" class="form-control" placeholder="Enter your instagram id">
+                                    </div>
+                                </div>
+
+                                <label for="email_address">Date of Birth</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" id="email_address" class="form-control" placeholder="Enter your date of birth">
+                                    </div>
+                                </div>
+
+                                <label for="email_address">Job</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" id="email_address" class="form-control" placeholder="Enter your job">
+                                    </div>
+                                </div>
+
+                                <label for="email_address">University</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" id="email_address" class="form-control" placeholder="Enter your university">
+                                    </div>
+                                </div>
+
+
                                 <br>
-                                <button type="button" class="btn btn-primary m-t-15 waves-effect">LOGIN</button>
+                                <button type="button" class="btn btn-primary m-t-15 waves-effect">SUBMIT</button>
                             </form>
                         </div>
                     </div>

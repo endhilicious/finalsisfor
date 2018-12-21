@@ -187,53 +187,54 @@
                         </ul>
                     </div>
                     <div class="body">
-                        <form action="<?php echo site_url(). '/admin/add_customer'; ?>" method="post" id="contactFrm" name="contactFrm">
+                        <?php foreach($customer as $c){ ?>
+                            <form action="<?php echo site_url(). '/admin/update/'.$c->id; ?>" method="post" id="contactFrm" name="contactFrm">
                             <label>Name</label>
                             <div class="form-group">
                                 <div class="form-line">
-                                    <input type="text" id="email_address" class="form-control" name="name" placeholder="Enter your name">
+                                    <input type="text" id="email_address" class="form-control" name="name" value="<?php echo $c->name ?>" placeholder="Enter your name">
                                 </div>
                             </div>
 
                             <label>Email</label>
                             <div class="form-group">
                                 <div class="form-line">
-                                    <input type="text" id="email_address" class="form-control" name="email" placeholder="Enter your email">
+                                    <input type="text" id="email_address" class="form-control" name="email" value="<?php echo $c->email ?>" placeholder="Enter your email">
                                 </div>
                             </div>
 
                             <label>Phone Number</label>
                             <div class="form-group">
                                 <div class="form-line">
-                                    <input type="text" id="email_address" class="form-control" name="phone" placeholder="Enter your phone number">
+                                    <input type="text" id="email_address" class="form-control" name="phone" value="<?php echo $c->phone ?>" placeholder="Enter your phone number">
                                 </div>
                             </div>
 
                             <label>Instagram</label>
                             <div class="form-group">
                                 <div class="form-line">
-                                    <input type="text" id="email_address" class="form-control" name="instagram" placeholder="Enter your instagram id">
+                                    <input type="text" id="email_address" class="form-control" name="instagram" value="<?php echo $c->instagram ?>" placeholder="Enter your instagram id">
                                 </div>
                             </div>
 
                             <label>Date of Birth</label>
                             <div class="form-group">
                                 <div class="form-line">
-                                    <input type="text" id="email_address" class="form-control" name="born_date" placeholder="Enter your date of birth">
+                                    <input type="text" id="email_address" class="form-control" name="born_date" value="<?php echo $c->born_date ?>" placeholder="Enter your date of birth">
                                 </div>
                             </div>
 
                             <label>Job</label>
                             <div class="form-group">
                                 <div class="form-line">
-                                    <input type="text" id="email_address" class="form-control" name="job" placeholder="Enter your job">
+                                    <input type="text" id="email_address" class="form-control" name="job" value="<?php echo $c->job ?>" placeholder="Enter your job">
                                 </div>
                             </div>
 
                             <label>University</label>
                             <div class="form-group">
                                 <div class="form-line">
-                                    <input type="text" id="email_address" class="form-control"name="university" placeholder="Enter your university">
+                                    <input type="text" id="email_address" class="form-control"name="university" value="<?php echo $c->university ?>" placeholder="Enter your university">
                                 </div>
                             </div>
 
@@ -241,6 +242,7 @@
                             <br>
                             <input type="submit" value="SUBMIT" name="SUBMIT" class="btn btn-primary m-t-15 waves-effect">
                         </form>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
