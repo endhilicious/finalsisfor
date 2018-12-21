@@ -34,7 +34,7 @@
 
 <body class="theme-red">
     <!-- Page Loader -->
-    <div class="page-loader-wrapper">
+    <!-- <div class="page-loader-wrapper">
         <div class="loader">
             <div class="preloader">
                 <div class="spinner-layer pl-red">
@@ -48,7 +48,7 @@
             </div>
             <p>Please wait...</p>
         </div>
-    </div>
+    </div> -->
     <!-- #END# Page Loader -->
     <!-- Overlay For Sidebars -->
     <div class="overlay"></div>
@@ -112,13 +112,13 @@
             <div class="menu">
                 <ul class="list">
                     <li class="header">MAIN NAVIGATION</li>
-                    <li class="active">
+                    <li>
                         <a href="<?php echo site_url() ?>/admin/index">
                             <i class="material-icons">home</i>
                             <span>Home</span>
                         </a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="<?php echo site_url() ?>/admin/customer">
                             <i class="material-icons">layers</i>
                             <span>Customer</span>
@@ -185,61 +185,55 @@
                                         <i class="material-icons">more_vert</i>
                                     </a>
                                     <ul class="dropdown-menu pull-right">
-                                        <li><a href="<?php echo site_url() ?>/admin/companyTambah">Tambah Data</a></li>
+                                        <li><a href="<?php echo base_url('index.php/admin/customerTambah') ?>">Tambah Data</a></li>
                                     </ul>
                                 </li>
                             </ul>
                         </div>
                         <div class="body table-responsive">
                             <table class="table">
-                                <thead>
-                                    <tr>
+                                <tbody>
+                                   <tr>
                                         <th>#</th>
-                                        <th>FIRST NAME</th>
-                                        <th>LAST NAME</th>
-                                        <th>USERNAME</th>
-                                        <th>ACTION</th>
+                                        <th>FULL NAME</th>
+                                        <th>EMAIL ADDRESS</th>
+                                        <th>PHONE</th>
+                                        <th>INSTAGRAM ACCOUNT</th>
+                                        <th>BIRTH DATE</th>
+                                        <th>UNIVERSITY</th>
+                                        <th colspan="2">ACTION</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                        <td>
-                                        	<button type="button" class="btn btn-success waves-effect">
-			                                    <i class="material-icons">home</i>
-			                                </button>
-			                                <button type="button" class="btn btn-danger waves-effect">
-			                                    <i class="material-icons">flight_takeoff</i>
-			                                </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
-                                        <td>@twitter</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">4</th>
-                                        <td>Larry</td>
-                                        <td>Jellybean</td>
-                                        <td>@lajelly</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">5</th>
-                                        <td>Larry</td>
-                                        <td>Kikat</td>
-                                        <td>@lakitkat</td>
-                                    </tr>
+                                    <?php $num = 1; ?>
+                                    <?php foreach ($query as $customer): ?>
+                                        <tr>
+                                            <td><?php echo $num ?></td>
+                                            <td><?php echo $customer->full_name ?></td>
+                                            <td><?php echo $customer->email_address ?></td>
+                                            <td><?php echo $customer->phone ?></td>
+                                            <td>@<?php echo $customer->instagram_account ?></td>
+                                            <td><?php echo $customer->birth_date ?></td>
+                                            <td><?php echo $customer->university ?></td>
+                                            <td>
+                                                <form action="<?php echo base_url('index.php/admin/customerTambah') ?>" method="post">
+                                                    <input type="hidden" name="id" value="<?php echo $customer->id ?>">
+                                                    <button type="submit" class="btn bg-blue waves-effect" style="padding: 8; cursor: pointer;">
+                                                        <i class="material-icons">edit</i>
+                                                    </button> 
+                                                </form>
+                                            </td>
+                                            <td>
+                                                <form action="<?php echo base_url('index.php/admin/customerHapus') ?>" method="post">
+                                                    <input type="hidden" name="id" value="<?php echo $customer->id ?>">
+                                                    <button type="submit" class="btn bg-red waves-effect" style="padding: 8; cursor: pointer;" onclick="return confirm('Are you sure want to delete?')">
+                                                        <i class="material-icons">delete</i>
+                                                    </button> 
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        <?php $num++ ?>
+                                    <?php endforeach ?>
                                 </tbody>
                             </table>
                         </div>

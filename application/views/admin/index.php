@@ -14,16 +14,16 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap Core Css -->
-    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>bootstrap/css/bootstrap.css" rel="stylesheet">
 
     <!-- Waves Effect Css -->
-    <link href="/node-waves/waves.css" rel="stylesheet" />
+    <link href="<?php echo base_url() ?>node-waves/waves.css" rel="stylesheet" />
 
     <!-- Animation Css -->
-    <link href="/animate-css/animate.css" rel="stylesheet" />
+    <link href="<?php echo base_url() ?>animate-css/animate.css" rel="stylesheet" />
 
     <!-- Morris Chart Css-->
-    <link href="/morrisjs/morris.css" rel="stylesheet" />
+    <link href="<?php echo base_url() ?>morrisjs/morris.css" rel="stylesheet" />
 
     <!-- Custom Css -->
     <link href="<?php echo base_url() ?>assets/css/style.css" rel="stylesheet">
@@ -34,7 +34,7 @@
 
 <body class="theme-red">
     <!-- Page Loader -->
-    <div class="page-loader-wrapper">
+    <!-- <div class="page-loader-wrapper">
         <div class="loader">
             <div class="preloader">
                 <div class="spinner-layer pl-red">
@@ -47,7 +47,7 @@
                 </div>
             </div>
             <p>Please wait...</p>
-        </div>
+        </div> -->
     </div>
     <!-- #END# Page Loader -->
     <!-- Overlay For Sidebars -->
@@ -75,7 +75,7 @@
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Call Search -->
-                    <li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>
+                    <li class="nav-item"><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>
                     <!-- #END# Call Search -->
                 </ul>
             </div>
@@ -478,39 +478,39 @@
     </section>
 
     <!-- Jquery Core Js -->
-    <script src="/jquery/jquery.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/plugins/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core Js -->
-    <script src="/bootstrap/js/bootstrap.js"></script>
+    <script src="<?php echo base_url() ?>assets/plugins/bootstrap/js/bootstrap.js"></script>
 
     <!-- Select Plugin Js -->
-    <script src="/bootstrap-select/js/bootstrap-select.js"></script>
+    <script src="<?php echo base_url() ?>assets/plugins/bootstrap-select/js/bootstrap-select.js"></script>
 
     <!-- Slimscroll Plugin Js -->
-    <script src="/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script src="<?php echo base_url() ?>assets/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
 
     <!-- Waves Effect Plugin Js -->
-    <script src="/node-waves/waves.js"></script>
+    <script src="<?php echo base_url() ?>assets/plugins/node-waves/waves.js"></script>
 
     <!-- Jquery CountTo Plugin Js -->
-    <script src="/jquery-countto/jquery.countTo.js"></script>
+    <script src="<?php echo base_url() ?>assets/plugins/jquery-countto/jquery.countTo.js"></script>
 
     <!-- Morris Plugin Js -->
-    <script src="/raphael/raphael.min.js"></script>
-    <script src="/morrisjs/morris.js"></script>
+    <script src="<?php echo base_url() ?>assets/plugins/raphael/raphael.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/plugins/morrisjs/morris.js"></script>
 
     <!-- ChartJs -->
-    <script src="/chartjs/Chart.bundle.js"></script>
+    <script src="<?php echo base_url() ?>assets/plugins/chartjs/Chart.bundle.js"></script>
 
     <!-- Flot Charts Plugin Js -->
-    <script src="/flot-charts/jquery.flot.js"></script>
-    <script src="/flot-charts/jquery.flot.resize.js"></script>
-    <script src="/flot-charts/jquery.flot.pie.js"></script>
-    <script src="/flot-charts/jquery.flot.categories.js"></script>
-    <script src="/flot-charts/jquery.flot.time.js"></script>
+    <script src="<?php echo base_url() ?>assets/plugins/flot-charts/jquery.flot.js"></script>
+    <script src="<?php echo base_url() ?>assets/plugins/flot-charts/jquery.flot.resize.js"></script>
+    <script src="<?php echo base_url() ?>assets/plugins/flot-charts/jquery.flot.pie.js"></script>
+    <script src="<?php echo base_url() ?>assets/plugins/flot-charts/jquery.flot.categories.js"></script>
+    <script src="<?php echo base_url() ?>assets/plugins/flot-charts/jquery.flot.time.js"></script>
 
     <!-- Sparkline Chart Plugin Js -->
-    <script src="/jquery-sparkline/jquery.sparkline.js"></script>
+    <script src="<?php echo base_url() ?>assets/plugins/jquery-sparkline/jquery.sparkline.js"></script>
 
     <!-- Custom Js -->
     <script src="<?php echo base_url() ?>assets/js/admin.js"></script>

@@ -14,16 +14,16 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap Core Css -->
-    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>bootstrap/css/bootstrap.css" rel="stylesheet">
 
     <!-- Waves Effect Css -->
-    <link href="/node-waves/waves.css" rel="stylesheet" />
+    <link href="<?php echo base_url() ?>node-waves/waves.css" rel="stylesheet" />
 
     <!-- Animation Css -->
-    <link href="/animate-css/animate.css" rel="stylesheet" />
+    <link href="<?php echo base_url() ?>animate-css/animate.css" rel="stylesheet" />
 
     <!-- Morris Chart Css-->
-    <link href="/morrisjs/morris.css" rel="stylesheet" />
+    <link href="<?php echo base_url() ?>morrisjs/morris.css" rel="stylesheet" />
 
     <!-- Custom Css -->
     <link href="<?php echo base_url() ?>assets/css/style.css" rel="stylesheet">
@@ -34,7 +34,7 @@
 
 <body class="theme-red">
     <!-- Page Loader -->
-    <div class="page-loader-wrapper">
+    <!-- <div class="page-loader-wrapper">
         <div class="loader">
             <div class="preloader">
                 <div class="spinner-layer pl-red">
@@ -48,7 +48,7 @@
             </div>
             <p>Please wait...</p>
         </div>
-    </div>
+    </div> -->
     <!-- #END# Page Loader -->
     <!-- Overlay For Sidebars -->
     <div class="overlay"></div>
@@ -106,13 +106,13 @@
             <div class="menu">
                 <ul class="list">
                     <li class="header">MAIN NAVIGATION</li>
-                    <li class="active">
+                    <li>
                         <a href="<?php echo site_url() ?>/admin/index">
                             <i class="material-icons">home</i>
                             <span>Home</span>
                         </a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="<?php echo site_url() ?>/admin/customer">
                             <i class="material-icons">layers</i>
                             <span>Customer</span>
@@ -171,7 +171,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                VERTICAL LAYOUT
+                                CUSTOMER FORM
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
@@ -187,21 +187,46 @@
                             </ul>
                         </div>
                         <div class="body">
-                            <form>
+                            <form action="<?php echo base_url('index.php/admin/customerSimpan') ?>" method="post">
+                                <input type="hidden" name="id" value="<?php echo $customer ? $customer->id : ''?>">
+                                <label for="full_name">Full Name</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" id="full_name" class="form-control" name="full_name" value="<?php echo $customer ? $customer->full_name : '' ?>" required>
+                                    </div>
+                                </div>
                                 <label for="email_address">Email Address</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" id="email_address" class="form-control" placeholder="Enter your email address">
+                                        <input type="email" id="email_address" class="form-control" name="email_address" value="<?php echo $customer ? $customer->email_address : '' ?>" required>
                                     </div>
                                 </div>
-                                <label for="password">Username</label>
+                                <label for="phone">Phone</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" id="email_address" class="form-control" placeholder="Enter your email address">
+                                        <input type="text" id="phone" class="form-control" name="phone" value="<?php echo $customer ? $customer->phone : '' ?>" required>
+                                    </div>
+                                </div>
+                                <label for="instagram_account">Instagram account</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" id="instagram_account" class="form-control" name="instagram_account" placeholder="username (without @)" value="<?php echo $customer ? $customer->instagram_account : '' ?>" required>
+                                    </div>
+                                </div>
+                                <label for="birth_date">Birth Date</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="date" id="birth_date" class="form-control" name="birth_date" value="<?php echo $customer ? $customer->birth_date : '' ?>" required>
+                                    </div>
+                                </div>
+                                <label for="university">University</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" id="university" class="form-control" name="university" value="<?php echo $customer ? $customer->university : '' ?>" required>
                                     </div>
                                 </div>
                                 <br>
-                                <button type="button" class="btn btn-primary m-t-15 waves-effect">LOGIN</button>
+    <button type="submit" class="btn bg-blue waves-effect p-3"><?php echo $action_button ?></button>
                             </form>
                         </div>
                     </div>
