@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -478,39 +479,39 @@
     </section>
 
     <!-- Jquery Core Js -->
-    <script src="/jquery/jquery.min.js"></script>
+    <script src="<?php echo base_url() ?>jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core Js -->
-    <script src="/bootstrap/js/bootstrap.js"></script>
+    <script src="<?php echo base_url() ?>bootstrap/js/bootstrap.js"></script>
 
     <!-- Select Plugin Js -->
-    <script src="/bootstrap-select/js/bootstrap-select.js"></script>
+    <script src="<?php echo base_url() ?>bootstrap-select/js/bootstrap-select.js"></script>
 
     <!-- Slimscroll Plugin Js -->
-    <script src="/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script src="<?php echo base_url() ?>jquery-slimscroll/jquery.slimscroll.js"></script>
 
     <!-- Waves Effect Plugin Js -->
-    <script src="/node-waves/waves.js"></script>
+    <script src="<?php echo base_url() ?>node-waves/waves.js"></script>
 
     <!-- Jquery CountTo Plugin Js -->
-    <script src="/jquery-countto/jquery.countTo.js"></script>
+    <script src="<?php echo base_url() ?>jquery-countto/jquery.countTo.js"></script>
 
     <!-- Morris Plugin Js -->
-    <script src="/raphael/raphael.min.js"></script>
-    <script src="/morrisjs/morris.js"></script>
+    <script src="<?php echo base_url() ?>raphael/raphael.min.js"></script>
+    <script src="<?php echo base_url() ?>morrisjs/morris.js"></script>
 
     <!-- ChartJs -->
-    <script src="/chartjs/Chart.bundle.js"></script>
+    <script src="<?php echo base_url() ?>chartjs/Chart.bundle.js"></script>
 
     <!-- Flot Charts Plugin Js -->
-    <script src="/flot-charts/jquery.flot.js"></script>
-    <script src="/flot-charts/jquery.flot.resize.js"></script>
-    <script src="/flot-charts/jquery.flot.pie.js"></script>
-    <script src="/flot-charts/jquery.flot.categories.js"></script>
-    <script src="/flot-charts/jquery.flot.time.js"></script>
+    <script src="<?php echo base_url() ?>flot-charts/jquery.flot.js"></script>
+    <script src="<?php echo base_url() ?>flot-charts/jquery.flot.resize.js"></script>
+    <script src="<?php echo base_url() ?>flot-charts/jquery.flot.pie.js"></script>
+    <script src="<?php echo base_url() ?>flot-charts/jquery.flot.categories.js"></script>
+    <script src="<?php echo base_url() ?>flot-charts/jquery.flot.time.js"></script>
 
     <!-- Sparkline Chart Plugin Js -->
-    <script src="/jquery-sparkline/jquery.sparkline.js"></script>
+    <script src="<?php echo base_url() ?>jquery-sparkline/jquery.sparkline.js"></script>
 
     <!-- Custom Js -->
     <script src="<?php echo base_url() ?>assets/js/admin.js"></script>

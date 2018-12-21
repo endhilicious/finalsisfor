@@ -1,3 +1,6 @@
+<?php
+	defined('BASEPATH') OR exit('Akses langsung tidak diperbolehkan');
+?>
 <!DOCTYPE html>
 <html>
 
@@ -185,8 +188,9 @@
                                         <i class="material-icons">more_vert</i>
                                     </a>
                                     <ul class="dropdown-menu pull-right">
-                                        <li><a href="<?php echo site_url() ?>/admin/companyTambah">Tambah Data</a></li>
+                                        <li><a href="<?php echo base_url('admin/companyTambah'); ?>">Tambah Data</a></li>
                                     </ul>
+                
                                 </li>
                             </ul>
                         </div>
@@ -195,52 +199,33 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>FIRST NAME</th>
-                                        <th>LAST NAME</th>
-                                        <th>USERNAME</th>
-                                        <th>ACTION</th>
+                                        <th>Nama Perusahaan</th>
+                                        <th>No Telp/th>
+                                        <th>Email</th>
+                                        <th>Alamat</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                        <td>
-                                        	<button type="button" class="btn btn-success waves-effect">
-			                                    <i class="material-icons">home</i>
-			                                </button>
-			                                <button type="button" class="btn btn-danger waves-effect">
-			                                    <i class="material-icons">flight_takeoff</i>
-			                                </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
-                                        <td>@twitter</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">4</th>
-                                        <td>Larry</td>
-                                        <td>Jellybean</td>
-                                        <td>@lajelly</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">5</th>
-                                        <td>Larry</td>
-                                        <td>Kikat</td>
-                                        <td>@lakitkat</td>
-                                    </tr>
-                                </tbody>
+									<?php
+										$no = 1;
+										foreach($database as $db) : ?>
+											<tr>
+												<td><?php echo $no; ?></td>
+												<td><?php echo $db->id; ?></td>
+												<td><?php echo $db->nama; ?></td>
+												<td><?php echo $db->notelp; ?></td>
+												<td><?php echo $db->alamat; ?></td>
+												<td><?php echo $db->email; ?></td>
+												<td>
+													<a href="<?php echo base_url('admin/formedit/'.$db->id); ?>"><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button></a>
+													<a href="<?php echo base_url('admin/hapusdata/'.$db->id); ?>" onclick="return confirm('Anda yakin hapus ?')"><button type="button" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span></button></a>
+												</td>
+											</tr>
+									<?php
+										$no++;
+										endforeach;
+									?>
+								</tbody>
                             </table>
                         </div>
                     </div>
@@ -251,19 +236,19 @@
     </section>
 
     <!-- Jquery Core Js -->
-    <script src="/jquery/jquery.min.js"></script>
+    <script src="<?php echo base_url() ?>jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core Js -->
-    <script src="/bootstrap/js/bootstrap.js"></script>
+    <script src="<?php echo base_url() ?>bootstrap/js/bootstrap.js"></script>
 
     <!-- Select Plugin Js -->
-    <script src="/bootstrap-select/js/bootstrap-select.js"></script>
+    <script src="<?php echo base_url() ?>bootstrap-select/js/bootstrap-select.js"></script>
 
     <!-- Slimscroll Plugin Js -->
-    <script src="/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script src="<?php echo base_url() ?>jquery-slimscroll/jquery.slimscroll.js"></script>
 
     <!-- Waves Effect Plugin Js -->
-    <script src="/node-waves/waves.js"></script>
+    <script src="<?php echo base_url() ?>node-waves/waves.js"></script>
 
     <!-- Custom Js -->
     <script src="<?php echo base_url() ?>assets/js/admin.js"></script>

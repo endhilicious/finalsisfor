@@ -1,3 +1,8 @@
+<?php
+	defined('BASEPATH') OR exit('Akses langsung tidak diperbolehkan');
+	//echo validation_errors();
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -162,7 +167,7 @@
     <section class="content">
         <div class="container-fluid">
             <div class="block-header">
-                <h2>FORM EXAMPLES</h2>
+                <h2>Form Company</h2>
             </div>
 
             <!-- Vertical Layout -->
@@ -171,7 +176,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                VERTICAL LAYOUT
+                              TAMPILAN SISFOR
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
@@ -212,32 +217,32 @@
     </section>
 
     <!-- Jquery Core Js -->
-    <script src="<?php echo base_url() ?>/assets/plugins/jquery/jquery.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/plugins/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core Js -->
-    <script src="<?php echo base_url() ?>/assets/plugins/bootstrap/js/bootstrap.js"></script>
+    <script src="<?php echo base_url() ?>assets/plugins/bootstrap/js/bootstrap.js"></script>
 
     <!-- Select Plugin Js -->
-    <script src="<?php echo base_url() ?>/assets/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+    <script src="<?php echo base_url() ?>assets/plugins/bootstrap-select/js/bootstrap-select.js"></script>
 
     <!-- Slimscroll Plugin Js -->
-    <script src="<?php echo base_url() ?>/assets/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script src="<?php echo base_url() ?>assets/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
 
     <!-- Waves Effect Plugin Js -->
-    <script src="<?php echo base_url() ?>/assets/plugins/node-waves/waves.js"></script>
+    <script src="<?php echo base_url() ?>assets/plugins/node-waves/waves.js"></script>
 
     <!-- Autosize Plugin Js -->
-    <script src="<?php echo base_url() ?>/assets/plugins/autosize/autosize.js"></script>
+    <script src="<?php echo base_url() ?>assets/plugins/autosize/autosize.js"></script>
 
     <!-- Moment Plugin Js -->
-    <script src="<?php echo base_url() ?>/assets/plugins/momentjs/moment.js"></script>
+    <script src="<?php echo base_url() ?>assets/plugins/momentjs/moment.js"></script>
 
     <!-- Bootstrap Material Datetime Picker Plugin Js -->
-    <script src="<?php echo base_url() ?>/assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <script src="<?php echo base_url() ?>assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
 
     <!-- Custom Js -->
-    <script src="<?php echo base_url() ?>/assets/js/admin.js"></script>
-    <script src="<?php echo base_url() ?>/assets/js/pages/forms/basic-form-elements.js"></script>
+    <script src="<?php echo base_url() ?>assets/js/admin.js"></script>
+    <script src="<?php echo base_url() ?>assets/js/pages/forms/basic-form-elements.js"></script>
 
     <!-- Demo Js -->
     <script src="<?php echo base_url() ?>/assets/js/demo.js"></script>

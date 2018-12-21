@@ -2,6 +2,12 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin extends CI_Controller {
+	public function __construct(){
+		parent:: __construct();
+		$this->load->model('Model');
+	}
+
+	
 	public function index() {
 		$this->load->view('admin/index');
 	}
@@ -18,10 +24,34 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/customerForm');	
 	}
 	public function company() {
-		$this->load->view('admin/company');
+		$data['database'] = $this->Model->get_all_data();
+		$this->load->view('admin/company', $data);
 	}
+	
 	public function companyTambah(){
-		$this->load->view('admin/companyForm');	
+		$this->Model->tambah_company();
+		$this->load->view('admin/companyForm', $data);	
+	}
+
+	public function hapusdata($id)
+	{
+		$this->Model->hapus_company($id);
+		$this->session->set_flashdata('hapus_sukses','Data company berhasil di hapus');
+		$this->load->view('admin/companyForm', $data);
+	}
+
+	public function formedit($id)
+	{
+		$data['db'] = $this->Model->edit_company($id);
+		$this->load->view('admin/companyForm', $data);
+
+	}
+
+	public function updatemobil($id)
+	{
+		$this->Model->update_company();
+		$this->session->set_flashdata('update_sukses', 'Data company berhasil diperbaharui');
+		
 	}
 	public function library() {
 		$this->load->view('admin/library');
