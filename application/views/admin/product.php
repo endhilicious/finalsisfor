@@ -32,9 +32,10 @@
     <link href="<?php echo base_url() ?>assets/css/themes/all-themes.css" rel="stylesheet" />
 </head>
 
+
 <body class="theme-red">
     <!-- Page Loader -->
-    <div class="page-loader-wrapper">
+    <!-- <div class="page-loader-wrapper">
         <div class="loader">
             <div class="preloader">
                 <div class="spinner-layer pl-red">
@@ -48,7 +49,7 @@
             </div>
             <p>Please wait...</p>
         </div>
-    </div>
+    </div> -->
     <!-- #END# Page Loader -->
     <!-- Overlay For Sidebars -->
     <div class="overlay"></div>
@@ -185,7 +186,7 @@
                                         <i class="material-icons">more_vert</i>
                                     </a>
                                     <ul class="dropdown-menu pull-right">
-                                        <li><a href="<?php echo site_url() ?>/admin/companyTambah">Tambah Data</a></li>
+                                        <li><a href="<?php echo site_url() ?>/admin/productTambah">Tambah Data</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -194,52 +195,33 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>#</th>
-                                        <th>FIRST NAME</th>
-                                        <th>LAST NAME</th>
-                                        <th>USERNAME</th>
-                                        <th>ACTION</th>
+                                        <th>No</th>
+                                        <th>Jenis Paket</th>
+                                        <th>Nama Paket</th>
+                                        <th>Fasilitas</th>
+                                        <th>Jenis Kerjasama</th>
+                                        <th>Harga per Bulan</th>
+                                        <th>Harga per Tahun</th>
+                                        <th colspan="2">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <?php $no = 1; foreach($data as $d){ ?>
                                     <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                        <td>
-                                        	<button type="button" class="btn btn-success waves-effect">
-			                                    <i class="material-icons">home</i>
-			                                </button>
-			                                <button type="button" class="btn btn-danger waves-effect">
-			                                    <i class="material-icons">flight_takeoff</i>
-			                                </button>
-                                        </td>
+                                    <td><?php echo $no++; ?></td>
+                                    <td><?php echo $d->Jenis_Paket; ?></td>
+                                    <td><?php echo $d->Nama_Paket; ?></td>
+                                    <td><?php echo $d->Fasilitas; ?></td>
+                                    <td><?php echo $d->Jenis_Kerjasama; ?></td>
+                                    <td><?php echo $d->Harga_Per_Bulan; ?></td>
+                                    <td><?php echo $d->Harga_Per_Tahun; ?></td>
+                                    <td align="center">
+                                        <a href="<?php echo base_url()."index.php/admin/productTambah/".$d->Jenis_Paket; ?>"><i class="material-icons">edit</i></a>
+                                        <a href="<?php echo base_url()."index.php/admin/productHapus/".$d->Jenis_Paket; ?>" onclick="return confirm('Apakah Yakin Ingin Menghapus data');"><i class="material-icons">delete</i></a> 
+                                    </td>
                                     </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
-                                        <td>@twitter</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">4</th>
-                                        <td>Larry</td>
-                                        <td>Jellybean</td>
-                                        <td>@lajelly</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">5</th>
-                                        <td>Larry</td>
-                                        <td>Kikat</td>
-                                        <td>@lakitkat</td>
-                                    </tr>
+                                    <?php } ?>
+
                                 </tbody>
                             </table>
                         </div>
