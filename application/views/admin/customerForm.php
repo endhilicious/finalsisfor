@@ -14,16 +14,16 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap Core Css -->
-    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>assets/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
 
     <!-- Waves Effect Css -->
-    <link href="/node-waves/waves.css" rel="stylesheet" />
+    <link href="<?php echo base_url() ?>assets/plugins/node-waves/waves.css" rel="stylesheet" />
 
     <!-- Animation Css -->
-    <link href="/animate-css/animate.css" rel="stylesheet" />
+    <link href="<?php echo base_url() ?>assets/plugins/animate-css/animate.css" rel="stylesheet" />
 
     <!-- Morris Chart Css-->
-    <link href="/morrisjs/morris.css" rel="stylesheet" />
+    <link href="<?php echo base_url() ?>assets/plugins/morrisjs/morris.css" rel="stylesheet" />
 
     <!-- Custom Css -->
     <link href="<?php echo base_url() ?>assets/css/style.css" rel="stylesheet">
@@ -171,7 +171,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                VERTICAL LAYOUT
+                                Add Customer
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
@@ -179,29 +179,57 @@
                                         <i class="material-icons">more_vert</i>
                                     </a>
                                     <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another action</a></li>
-                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                        <li><a href="<?php echo site_url() ?>/admin/customer" >Kembali</a></li>
                                     </ul>
                                 </li>
                             </ul>
                         </div>
                         <div class="body">
-                            <form>
-                                <label for="email_address">Email Address</label>
+                            <form action="<?php echo base_url('index.php/admin/save'); ?>" method="POST">
+                                <label for="email_address">Nama</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" id="email_address" class="form-control" placeholder="Enter your email address">
+                                        <input type="text" name="nama" id="email_address" class="form-control" placeholder="masukkan nama">
                                     </div>
                                 </div>
-                                <label for="password">Username</label>
+                                <label for="email_address">Email</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" id="email_address" class="form-control" placeholder="Enter your email address">
+                                        <input type="text" name="email" id="email_address" class="form-control" placeholder="masukkan email">
+                                    </div>
+                                </div>
+                                <label for="email_address">Nomor Telepon</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" name="telp" id="email_address" class="form-control" placeholder="masukkan nomor telepon">
+                                    </div>
+                                </div>
+                                <label for="email_address">Instagram</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" name="instagram" id="email_address" class="form-control" placeholder="masukkan instagram">
+                                    </div>
+                                </div>
+                                <label for="email_address">Tanggal Lahir</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" name="tanggallahir" id="email_address" class="form-control" placeholder="masukkan tanggal lahir">
+                                    </div>
+                                </div>
+                                <label for="email_address">Pekerjaan</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" name="pekerjaan" id="email_address" class="form-control" placeholder="masukkan pekerjaan">
+                                    </div>
+                                </div>
+                                <label for="email_address">Instansi / Universitas</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" name="instansi" id="email_address" class="form-control" placeholder="masukkan instansi / universitas">
                                     </div>
                                 </div>
                                 <br>
-                                <button type="button" class="btn btn-primary m-t-15 waves-effect">LOGIN</button>
+                                <button type="submit" class="btn btn-primary m-t-15 waves-effect">SAVE</button>
                             </form>
                         </div>
                     </div>

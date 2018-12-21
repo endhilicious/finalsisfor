@@ -96,12 +96,6 @@
                     <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                         <ul class="dropdown-menu pull-right">
-                            <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profile</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="javascript:void(0);"><i class="material-icons">group</i>Followers</a></li>
-                            <li><a href="javascript:void(0);"><i class="material-icons">shopping_cart</i>Sales</a></li>
-                            <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li>
-                            <li role="separator" class="divider"></li>
                             <li><a href="javascript:void(0);"><i class="material-icons">input</i>Sign Out</a></li>
                         </ul>
                     </div>
@@ -168,16 +162,16 @@
     <section class="content">
         <div class="container-fluid">
             <div class="block-header">
-                <h2>NORMAL TABLES</h2>
+                <h2>FORM EXAMPLES</h2>
             </div>
-            <!-- Basic Table -->
+
+            <!-- Vertical Layout -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
                             <h2>
-                                BASIC TABLES
-                                <small>Basic example without any additional modification classes</small>
+                                Add Customer
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
@@ -185,91 +179,98 @@
                                         <i class="material-icons">more_vert</i>
                                     </a>
                                     <ul class="dropdown-menu pull-right">
-                                        <li><a href="<?php echo site_url() ?>/admin/companyTambah">Tambah Data</a></li>
+                                        <li><a href="<?php echo site_url() ?>/admin/customer" >Kembali</a></li>
                                     </ul>
                                 </li>
                             </ul>
                         </div>
-                        <div class="body table-responsive">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>FIRST NAME</th>
-                                        <th>LAST NAME</th>
-                                        <th>USERNAME</th>
-                                        <th>ACTION</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                        <td>
-                                        	<button type="button" class="btn btn-success waves-effect">
-			                                    <i class="material-icons">home</i>
-			                                </button>
-			                                <button type="button" class="btn btn-danger waves-effect">
-			                                    <i class="material-icons">flight_takeoff</i>
-			                                </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
-                                        <td>@twitter</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">4</th>
-                                        <td>Larry</td>
-                                        <td>Jellybean</td>
-                                        <td>@lajelly</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">5</th>
-                                        <td>Larry</td>
-                                        <td>Kikat</td>
-                                        <td>@lakitkat</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="body">
+                            <form action="<?php echo base_url('index.php/admin/update'); ?>" method="POST">
+                                <?php foreach ($query->result() as $detail) { ?>
+                                <input type="hidden" name="id" value="<?php echo $detail->id; ?>">
+                                <label for="email_address">Nama</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" name="nama" id="email_address" class="form-control" placeholder="masukkan nama" value="<?php echo $detail->nama; ?>">
+                                    </div>
+                                </div>
+                                <label for="email_address">Email</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" name="email" id="email_address" class="form-control" placeholder="masukkan email" value="<?php echo $detail->email; ?>">
+                                    </div>
+                                </div>
+                                <label for="email_address">Nomor Telepon</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" name="telp" id="email_address" class="form-control" placeholder="masukkan nomor telepon" value="<?php echo $detail->telp; ?>">
+                                    </div>
+                                </div>
+                                <label for="email_address">Instagram</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" name="instagram" id="email_address" class="form-control" placeholder="masukkan instagram" value="<?php echo $detail->instagram; ?>">
+                                    </div>
+                                </div>
+                                <label for="email_address">Tanggal Lahir</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" name="tanggallahir" id="email_address" class="form-control" placeholder="masukkan tanggal lahir" value="<?php echo $detail->tanggallahir; ?>">
+                                    </div>
+                                </div>
+                                <label for="email_address">Pekerjaan</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" name="pekerjaan" id="email_address" class="form-control" placeholder="masukkan pekerjaan" value="<?php echo $detail->pekerjaan; ?>">
+                                    </div>
+                                </div>
+                                <label for="email_address">Instansi / Universitas</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" name="instansi" id="email_address" class="form-control" placeholder="masukkan instansi / universitas" value="<?php echo $detail->instansi; ?>">
+                                    </div>
+                                </div>
+                                <br>
+                                <button type="submit" class="btn btn-primary m-t-15 waves-effect">UPDATE</button>
+                                <?php } ?>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- #END# Basic Table -->
+            <!-- #END# Vertical Layout -->
         </div>
     </section>
 
-     <!-- Jquery Core Js -->
-    <script src="<?php echo base_url() ?>assets/plugins/jquery/jquery.min.js"></script>
+    <!-- Jquery Core Js -->
+    <script src="<?php echo base_url() ?>/assets/plugins/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core Js -->
-    <script src="<?php echo base_url() ?>assets/plugins/bootstrap/js/bootstrap.js"></script>
+    <script src="<?php echo base_url() ?>/assets/plugins/bootstrap/js/bootstrap.js"></script>
 
     <!-- Select Plugin Js -->
-    <script src="<?php echo base_url() ?>assets/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+    <script src="<?php echo base_url() ?>/assets/plugins/bootstrap-select/js/bootstrap-select.js"></script>
 
     <!-- Slimscroll Plugin Js -->
-    <script src="<?php echo base_url() ?>assets/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script src="<?php echo base_url() ?>/assets/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
 
     <!-- Waves Effect Plugin Js -->
-    <script src="<?php echo base_url() ?>assets/plugins/node-waves/waves.js"></script>
+    <script src="<?php echo base_url() ?>/assets/plugins/node-waves/waves.js"></script>
+
+    <!-- Autosize Plugin Js -->
+    <script src="<?php echo base_url() ?>/assets/plugins/autosize/autosize.js"></script>
+
+    <!-- Moment Plugin Js -->
+    <script src="<?php echo base_url() ?>/assets/plugins/momentjs/moment.js"></script>
+
+    <!-- Bootstrap Material Datetime Picker Plugin Js -->
+    <script src="<?php echo base_url() ?>/assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
 
     <!-- Custom Js -->
-    <script src="<?php echo base_url() ?>assets/js/admin.js"></script>
+    <script src="<?php echo base_url() ?>/assets/js/admin.js"></script>
+    <script src="<?php echo base_url() ?>/assets/js/pages/forms/basic-form-elements.js"></script>
 
     <!-- Demo Js -->
-    <script src="<?php echo base_url() ?>assets/js/demo.js"></script>
+    <script src="<?php echo base_url() ?>/assets/js/demo.js"></script>
 </body>
-
 </html>
