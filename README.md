@@ -6,3 +6,5 @@
 3. Memodifikasi tabel pada halaman customer
 4. Membuat database customer
 5. CRUD dengan CodeIgniter
+6. Hilangkan index.php
+7. Tarik API
