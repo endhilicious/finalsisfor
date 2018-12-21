@@ -10,3 +10,9 @@
     <td>administrator</td>
   </tr>
 </table>
+
+## Yang sudah dikerjakan
+<ul>
+  <li>Halaman login sudah menggunakan session, sehingga hanya yang sudah login yang dapat mengakses halaman admin</li>
+  <li>CRUD</li>
+</ul>
