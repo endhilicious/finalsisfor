@@ -34,7 +34,7 @@
 
 <body class="theme-red">
     <!-- Page Loader -->
-    <div class="page-loader-wrapper">
+   
         <div class="loader">
             <div class="preloader">
                 <div class="spinner-layer pl-red">
@@ -179,55 +179,38 @@
                                         <i class="material-icons">more_vert</i>
                                     </a>
                                     <ul class="dropdown-menu pull-right">
-                                        <li><a href="<?php echo site_url() ?>/admin/customerTambah">Tambah Data</a></li>
+                                        <li><a href="<?php echo site_url() ?>/admin/product">Tampilan data</a></li>
                                     </ul>
                                 </li>
                             </ul>
                         </div>
-                        <div class="body table-responsive">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>FIRST NAME</th>
-                                        <th>LAST NAME</th>
-                                        <th>USERNAME</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
-                                        <td>@twitter</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">4</th>
-                                        <td>Larry</td>
-                                        <td>Jellybean</td>
-                                        <td>@lajelly</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">5</th>
-                                        <td>Larry</td>
-                                        <td>Kikat</td>
-                                        <td>@lakitkat</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                   <form method="POST" action="<?php echo base_url(); ?>index.php/admin/insert">
+				<div class="form-group">
+					<label>Jenis Paket:</label>
+					<input type="text" class="form-control" name="jenis_paket">
+				</div>
+				<div class="form-group">
+					<label>Nama Paket:</label>
+					<input type="text" class="form-control" name="nama_paket">
+				</div>
+				<div class="form-group">
+					<label>fasilitas:</label>
+					<input type="text" class="form-control" name="fasilitas">
+				</div>
+				<div class="form-group">
+					<label>Jenis Kerjasama:</label>
+					<input type="text" class="form-control" name="jenis_kerjasama">
+				</div>
+				<div class="form-group">
+					<label>Harga perbulan:</label>
+					<input type="text" class="form-control" name="hargaperbulan">
+				</div>
+				<div class="form-group">
+					<label>Harga pertahun:</label>
+					<input type="text" class="form-control" name="hargapertahun">
+				</div>
+				<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
+			</form>
                     </div>
                 </div>
             </div>

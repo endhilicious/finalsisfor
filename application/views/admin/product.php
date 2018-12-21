@@ -34,7 +34,7 @@
 
 <body class="theme-red">
     <!-- Page Loader -->
-    <div class="page-loader-wrapper">
+  
         <div class="loader">
             <div class="preloader">
                 <div class="spinner-layer pl-red">
@@ -185,7 +185,7 @@
                                         <i class="material-icons">more_vert</i>
                                     </a>
                                     <ul class="dropdown-menu pull-right">
-                                        <li><a href="<?php echo site_url() ?>/admin/companyTambah">Tambah Data</a></li>
+                                        <li><a href="<?php echo site_url() ?>/admin/productTambah">Tambah Data</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -194,52 +194,45 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>#</th>
-                                        <th>FIRST NAME</th>
-                                        <th>LAST NAME</th>
-                                        <th>USERNAME</th>
-                                        <th>ACTION</th>
+                                        <th>ID</th>
+                                        <th>Jenis Paket</th>
+                                        <th>Nama Paket</th>
+                                        <th>Fasilitas</th>
+                                        <th>Jenis Kerjasama</th>
+                                        <th>Harga perbulan</th>
+                                        <th>Harga pertahun</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+	                                <?php
+					foreach($final as $finals){
+						?>
                                     <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                        <td>
-                                        	<button type="button" class="btn btn-success waves-effect">
-			                                    <i class="material-icons">home</i>
+                                        <td><?php echo $finals->id; ?></td>
+                                        <td><?php echo $finals->jenis_paket; ?></td>
+                                        <td><?php echo $finals->nama_paket; ?></td>
+                                        <td><?php echo $finals->fasilitas; ?></td>
+                                        <td><?php echo $finals->jenis_kerjasama; ?> </td>
+										<td><?php echo $finals->hargaperbulan; ?> </td>
+										<td><?php echo $finals->hargapertahun; ?> </td>
+										<td>
+											<a href="<?php echo base_url(); ?>index.php/admin/productEdit/<?php echo $finals->id; ?>" 
+											 	<button type="button" class="btn btn-success waves-effect">
+			                                    <i class="material-icons">edit</i></a>
 			                                </button>
+			                                
+			                                <a href="<?php echo base_url(); ?>index.php/admin/delete/<?php echo $finals->id; ?>"
+			                                
 			                                <button type="button" class="btn btn-danger waves-effect">
-			                                    <i class="material-icons">flight_takeoff</i>
+			                                    <i class="material-icons">delete</i></a>
 			                                </button>
-                                        </td>
+										</td>
                                     </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
-                                        <td>@twitter</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">4</th>
-                                        <td>Larry</td>
-                                        <td>Jellybean</td>
-                                        <td>@lajelly</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">5</th>
-                                        <td>Larry</td>
-                                        <td>Kikat</td>
-                                        <td>@lakitkat</td>
-                                    </tr>
+                                    
+                                                                        	<?php
+					}
+					?>
                                 </tbody>
                             </table>
                         </div>

@@ -34,7 +34,7 @@
 
 <body class="theme-red">
     <!-- Page Loader -->
-    <div class="page-loader-wrapper">
+    
         <div class="loader">
             <div class="preloader">
                 <div class="spinner-layer pl-red">
@@ -510,7 +510,7 @@
     <script src="/flot-charts/jquery.flot.time.js"></script>
 
     <!-- Sparkline Chart Plugin Js -->
-    <script src="/jquery-sparkline/jquery.sparkline.js"></script>
+    <script src="<?php echo base_url() ?>/jquery-sparkline/jquery.sparkline.js"></script>
 
     <!-- Custom Js -->
     <script src="<?php echo base_url() ?>assets/js/admin.js"></script>
